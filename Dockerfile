@@ -1,5 +1,5 @@
 FROM alpine:latest
-MAINTAINER steven brezina <steveinatorx@gmail.com>
+LABEL authors="Ryan day <soldair@gmail.com>,steven brezina <steveinatorx@gmail.com>"
 
 RUN apk update
 
