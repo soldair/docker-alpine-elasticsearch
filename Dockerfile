@@ -3,7 +3,7 @@ LABEL authors="Ryan day <soldair@gmail.com>,steven brezina <steveinatorx@gmail.c
 
 RUN apk update
 
-RUN apk add ca-certificates curl bash
+RUN apk add ca-certificates curl bash sudo
 
 RUN apk add openjdk8-jre
 
@@ -20,7 +20,8 @@ RUN \
 
 #RUN ls -lart /opt/elasticsearch/bin/elasticsearch
 
-ADD ./elasticsearch.yml /var/lib/elasticsearch/config/elasticsearch.yml
+ADD ./elasticsearch.yml /var/lib/elasticsearch/config/
+#ADD ./elasticsearch.yml /opts/elasticsearch/config/
 ADD ./start.sh /start.sh
 
 #es waint let us run as root by default
