@@ -2,10 +2,9 @@
 
 based on [mini-elasticsearch](https://github.com/luislavena/dockerfiles/tree/master/mini-elasticsearch) by luislavena
 
-A very lightweight [Elasticsearch](http://www.elasticsearch.org/) service container.
+A ~~very~~ somewhat lightweight [Elasticsearch](http://www.elasticsearch.org/) service container.
 
-Updated for coreos
-
+Updated for alpine latest, openjdk8-jre, and elasticsearch 5.0.1
 ## Usage
 
 To run this container and bind port `9200`:
