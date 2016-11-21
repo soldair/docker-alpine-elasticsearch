@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # uses es home to load all configs.
 # adding a "commandopts" to the volume allows you to pass more options to elasticsearch 
@@ -47,8 +47,8 @@ vol=/var/lib/elasticsearch
 ls $vol
 
 esopts=""
-if [ -f "$vol/elasticsearch.yml" ]; then
-  esopts="-Des.path.home=$vol";
+if [ -f "$vol/config/elasticsearch.yml" ]; then
+  esopts="-Enetwork.host=0.0.0.0";
   echo "setting es.path.home to $vol"
 else 
   echo "[WARNING] missing elasticsearch config. not setting es.path.home to $vol"
@@ -71,7 +71,8 @@ echo "-------------------------------"
 echo "/opt/elasticsearch/bin/elasticsearch $commandopts $esopts"
 
 start() {
-	exec /opt/elasticsearch/bin/elasticsearch $commandopts $esopts
+  #sleep 99999
+  sudo -u esrunner /opt/elasticsearch/bin/elasticsearch -Enetwork.host=0.0.0.0
 }
 
 start
